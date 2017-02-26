@@ -15,6 +15,35 @@ USE chat;
 -- 
 -- ---
 
+
+-- ---
+-- Table 'users'
+-- 
+-- ---
+
+DROP TABLE IF EXISTS users;
+		
+CREATE TABLE users (
+  id INTEGER NOT NULL AUTO_INCREMENT,
+  name VARCHAR(30) UNIQUE NOT NULL,
+  PRIMARY KEY (id)
+);
+
+-- ---
+-- Table 'rooms'
+-- 
+-- ---
+
+DROP TABLE IF EXISTS rooms;
+		
+CREATE TABLE rooms (
+  id INTEGER NOT NULL AUTO_INCREMENT,
+  roomName VARCHAR(30) UNIQUE NOT NULL,
+  PRIMARY KEY (id)
+);
+
+
+
 DROP TABLE IF EXISTS messages;
 		
 CREATE TABLE messages (
@@ -28,31 +57,7 @@ CREATE TABLE messages (
   FOREIGN KEY (user_id) REFERENCES  users(id)
 );
 
--- ---
--- Table 'users'
--- 
--- ---
 
-DROP TABLE IF EXISTS users;
-		
-CREATE TABLE users (
-  id INTEGER NOT NULL AUTO_INCREMENT,
-  name MEDIUMTEXT NOT NULL,
-  PRIMARY KEY (id)
-);
-
--- ---
--- Table 'rooms'
--- 
--- ---
-
-DROP TABLE IF EXISTS rooms;
-		
-CREATE TABLE rooms (
-  id INTEGER NOT NULL AUTO_INCREMENT,
-  roomName MEDIUMTEXT NOT NULL,
-  PRIMARY KEY (id)
-);
 
 -- ---
 -- Foreign Keys 

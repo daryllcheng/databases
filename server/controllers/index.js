@@ -10,7 +10,7 @@ module.exports = {
   messages: {
     // console.log("i'm here in controllers message"),
     get: function (req, res) {}, // a function which handles a get request for all messages
-    post: function (req, res) {      
+    post: function (req, res) {     
       console.log("control post message", req.body);
       models.messages.post(req.body, function (error) {
         if (error) {
@@ -23,11 +23,15 @@ module.exports = {
 
   users: {
     // Ditto as above
-    // console.log("i'm here in controllers user"),
+    // console.log("i'm here in con trollers user"),
     get: function (req, res) {},
     post: function (req, res) {
+      // console.log('modelsUsersPost: ', models.messages.users.post); 
       console.log("controller post ", req.body);
       models.users.post(req.body, function (error) {
+        console.log("hit?")
+        // res.writeHead(201, defaultCorsHeaders);
+        // return res.send();
         if (error) {
           console.log("error in the user controller ", error)
         } else {
